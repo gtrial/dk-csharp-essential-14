@@ -6,11 +6,14 @@ namespace task03
     {
         private static void Main()
         {
-            //Создайте коллекцию MyDictionary<TKey,TValue>.
-            //Реализуйте в простейшем приближении возможность использования ее экземпляра аналогично экземпляру класса Dictionary<TKey,TValue>.
-            //Минимально требуемый интерфейс взаимодействия с экземпляром, должен включать метод добавления элемента,
-            //индексатор для получения значения элемента по указанному индексу и свойство только для чтения для получения общего количества элементов.
-            //Реализуйте возможность перебора элементов коллекции в цикле foreach.
+            var myDictionary = new MyDictionary<int, string>(new[] {1, 2}, new[] {"a", "b"});
+            myDictionary.Add(3, "c");
+            Console.WriteLine(myDictionary[2]);
+            Console.WriteLine(myDictionary.Length);
+            foreach (var item in myDictionary)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
